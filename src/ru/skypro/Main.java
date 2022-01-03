@@ -22,7 +22,7 @@ public class Main {
         // Задача 2
 
         int d = 4;
-        for (; d <= 31; d+=7) {
+        for (; d <= 31; d += 7) {
             System.out.println("Сегодня пятница " + d + " число. Необходимо подготовить отчет.");
         }
         System.out.println('\n');
@@ -30,35 +30,35 @@ public class Main {
         // Задача 3
 
         int y = 0;
-        int year = 2022;
-        int befor = year - 200;// последние 200 лет до текущего года
-        //int after = year + 100;// следующие 100 лет после текущего года
-        while (y <= 2022) {
-            y += 79;
-            if (y > befor)
+        int step = 79;// периодичность пролета/появления кометы, шаг в годах
+        int year = 2022;// задать год
+        int beforYear = 200;// лет до заданного года
+        int afterYear = 100;// лет после заданного года
+        int befor = year - beforYear;// выводить в консоль лет до заданного года
+        int after = year + afterYear;// выподить в консоль лет после заданного года
+
+        for (; y <= after; y += step) {
+            if (y > befor && y < after)
                 System.out.println(y + " год появления кометы.");
-        /*for (; y <= 2022; ) {
-            y += 79;
-            if (y > befor)
-            System.out.println(y + " год появления кометы.");*/ // вариант с "for".
         }
         System.out.println('\n');
+
 
         // Задание 4
         int p = 0;
         while (p < 30) {
             p++;
             if (p % 3 != 0 && p % 5 != 0)
-            System.out.println(p);
+                System.out.println(p);
             if (p % 3 == 0 && p % 5 != 0) {
                 System.out.println(p + " ping");
             }
             if (p % 5 == 0 && p % 3 != 0) {
                 System.out.println(p + " pong");
-            } if (p % 3 == 0 && p % 5 == 0) {
+            }
+            if (p % 3 == 0 && p % 5 == 0) {
                 System.out.println(p + " ping pong");
             }
         }
-        System.out.println('\n');
     }
 }
